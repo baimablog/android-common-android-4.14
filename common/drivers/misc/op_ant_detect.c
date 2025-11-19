@@ -1,1 +1,0 @@
-../../../../vendor/oplus/kernel/misc/op_ant_detect.c
