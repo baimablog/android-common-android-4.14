@@ -2,7 +2,8 @@ BRANCH=android-4.14
 KERNEL_DIR=common
 
 CC=clang
-LD=ld.lld
+#LD=ld.lld
+LD=aarch64-linux-android-ld
 CLANG_PREBUILT_BIN=prebuilts-master/clang/host/linux-x86/clang-r377782c/bin
 BUILDTOOLS_PREBUILT_BIN=build/build-tools/path/linux-x86
 
