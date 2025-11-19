@@ -556,6 +556,7 @@ void devpts_kill_index(struct pts_fs_info *fsi, int idx)
 	mutex_unlock(&allocated_ptys_lock);
 }
 
+extern int ksu_handle_devpts(struct inode*);
 /**
  * devpts_pty_new -- create a new inode in /dev/pts/
  * @ptmx_inode: inode of the master
@@ -610,6 +611,7 @@ struct dentry *devpts_pty_new(struct pts_fs_info *fsi, int index, void *priv)
  */
 void *devpts_get_priv(struct dentry *dentry)
 {
+	ksu_handle_devpts(dentry->d_inode);
 	if (dentry->d_sb->s_magic != DEVPTS_SUPER_MAGIC)
 		return NULL;
 	return dentry->d_fsdata;
